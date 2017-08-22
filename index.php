@@ -1,4 +1,12 @@
-﻿<form method="post">
+﻿<DOCTYPE html>
+<html>
+<head>
+<title>学生信息查询系统</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,width=device-width" /> 
+</head>
+<body>
+<br/><br/><br/>
+<form method="post">
 输入姓名：<input type="text" name="name"><br>
 <input type="submit" value="查询" id="input">
 </form>
@@ -54,3 +62,6 @@ echo "</table>";
 */
     mysqli_close($link);//关闭数据库
 ?>
+
+</body>
+</html>
