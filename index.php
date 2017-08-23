@@ -6,9 +6,7 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" /> 
 <link rel="stylesheet" href="./css/style.css" /> 
 <link href="http://cdn.bootcss.com/weui/1.1.2/style/weui.min.css" rel="stylesheet">
-<script type="text/javascript">
-var sno = document.getElementById("sno");
-</script>
+<script src="js/bdstatistics.js"></script>
  </head> 
  <body> 
   <svg aria-hidden="true" style="position: absolute; width: 0px; height: 0px; overflow: hidden;"> 
@@ -31,11 +29,12 @@ var sno = document.getElementById("sno");
         <label class="weui-label">姓名</label>
        </div> 
        <div class="weui-cell__bd"> 
-        <input class="weui-input" type="text"  name="name" placeholder="请输入姓名" /> 
+        <input class="weui-input" type="text"  name="name" placeholder="请输入姓名"
+        autofocus="autofocus"/> 
        </div> 
       </div> 
       <div class="weui-btn-area"> 
-     <input class="weui-btn weui-btn_primary" type="submit" value="查询" id="input">
+     <input class="weui-btn weui-btn_primary" type="submit" value="查询" >
     </div>  
      </form>
     <?php
@@ -65,7 +64,7 @@ include('connect.php');//链接数据库
         echo "学制: " . $row['学制']. "<br>";
         echo"<br/>";
         */
-        echo "<div class='weui-cells weui-cells_form'>";
+      echo "<div class='weui-cells weui-cells_form'>";
       echo "<div class='weui-cell'>
       <div class='weui-cell__hd'><label class='weui-label'>学号</label></div>
       <div class='weui-cell__bd'><input class='weui-input' type='text' value='".$row['学号']."' id='sno'></div></div>";
@@ -102,22 +101,19 @@ include('connect.php');//链接数据库
     mysqli_close($link);//关闭数据库
     
 ?>  
-    <!--
-    <video width="330" height="240" controls="controls">
-    <source src="haust.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>
-    -->
-
-
-
 <div>
+<div class="weui-cells__tips">
+      <span>注意事项: </span><br/>
+      <span>本系统仅可查询河南科技大学在校学生信息！</span>
+</div>
 <div class="f-footer"> 
-<script language="JavaScript" src="js/count.js";></script>
-<br><br>
+<a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA3NTEwNjU0OA==#wechat_redirect">
 <svg aria-hidden="true" class="icon"> 
 <use xlink:href="#icon-weixin"></use> 
 </svg><span>Hauster小助手</span>
+</a>
+<br/><br/>
+<script language="JavaScript" src="js/count.js";></script>
 </div>
 </div>
 </div> 
@@ -129,9 +125,6 @@ include('connect.php');//链接数据库
      <img style="width: 50%;" src="./qrcode.jpg" />
     </div> 
 --> 
-   <!--添加背景音乐
- <audio loop="loop" src="http://other.web.rh03.sycdn.kuwo.cn/resource/a2/85/80/1259690914.aac"></audio>
- --> 
   </div>
  </body>
 </html>
